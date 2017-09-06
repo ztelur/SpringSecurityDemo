@@ -15,21 +15,21 @@ import java.util.Collection;
 
 @Component
 public class MyUserDetailsService implements UserDetailsService {
-    private Logger logger = LoggerFactory.getLogger(SecureResourceFilterInvocationDefinitionSource.class);
+    private Logger logger = LoggerFactory.getLogger(MyUserDetailsService.class);
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         logger.info("loadUserByUsername " + s);
         Collection<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
 
 
-        GrantedAuthority auth1 = new SimpleGrantedAuthority("ROLE_ADMIN");
-        GrantedAuthority auth2 = new SimpleGrantedAuthority("ROLE_USER");
+        GrantedAuthority adminAuth = new SimpleGrantedAuthority("ROLE_ADMIN");
+        GrantedAuthority userAuth = new SimpleGrantedAuthority("ROLE_USER");
 
 
         if (s.equals("user")) {
-            auths.add(auth1);
+            auths.add(userAuth);
         } else if (s.equals("admin")) {
-            auths.add(auth2);
+            auths.add(adminAuth);
         }
         //得到用户的权限
 //        auths = pubUsersHome.loadUserAuthoritiesByName( username );

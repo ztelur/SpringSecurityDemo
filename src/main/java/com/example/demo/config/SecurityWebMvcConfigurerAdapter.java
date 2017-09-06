@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.config;
 
+import com.example.demo.MyUserDetailsService;
+import com.example.demo.SecurityFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,8 +23,6 @@ public class SecurityWebMvcConfigurerAdapter extends WebSecurityConfigurerAdapte
 //    @Autowired
 //    AuthTokenFilter authTokenFilter;
 
-    @Autowired
-    MyUserDetailsService userDetailsService;
 
     @Bean
     UserDetailsService customUserService() {

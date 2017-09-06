@@ -34,13 +34,6 @@ public class Controller {
     }
 
 
-
-    @RequestMapping("/login")
-    @ResponseBody
-    public String login() {
-        return "login";
-    }
-
     @RequestMapping("/")
     public String home() {
         return "redirect:/index";
