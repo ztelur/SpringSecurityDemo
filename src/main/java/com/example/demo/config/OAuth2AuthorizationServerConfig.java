@@ -57,7 +57,7 @@ public class OAuth2AuthorizationServerConfig implements AuthorizationServerConfi
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.withClientDetails(clientDetailsService()).build();
+        clients.withClientDetails(clientDetailsService());
     }
 
     @Override
